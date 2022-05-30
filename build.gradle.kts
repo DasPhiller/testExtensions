@@ -12,6 +12,7 @@ version = "1.0.0"
 
 repositories {
     mavenCentral()
+    maven("https://jitpack.io")
 }
 
 dependencies {
@@ -20,6 +21,9 @@ dependencies {
 
     // KSpigot dependency
     implementation("net.axay:kspigot:1.18.2")
+    
+    //Extensions dependency
+    implementation("com.github.dasphiller:extensions:1.2")
 }
 
 tasks {
