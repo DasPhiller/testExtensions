@@ -1,4 +1,5 @@
 val javaVersion = 17 // Minecraft 1.18 requires Java 17
+val extensionsVersion = 3.1
 
 plugins {
     kotlin("jvm") version "1.6.21"
@@ -7,12 +8,11 @@ plugins {
     id("xyz.jpenilla.run-paper") version "1.0.6"
 }
 
-group = "org.example"
-version = "1.0.0"
+group = "de.dasphiller"
+version = "$extensionsVersion"
 
 repositories {
     mavenCentral()
-    maven("https://jitpack.io")
 }
 
 dependencies {
@@ -23,7 +23,7 @@ dependencies {
     implementation("net.axay:kspigot:1.18.2")
     
     //Extensions dependency
-    implementation("com.github.dasphiller:extensions:1.2")
+    implementation("de.dasphiller.extensions:extensions:$extensionsVersion")
 }
 
 tasks {
@@ -43,14 +43,16 @@ tasks {
 
 
 bukkit {
-    name = "ExamplePlugin"
+    name = "Test"
     apiVersion = "1.18"
     authors = listOf(
-        "Your Name",
+        "DasPhiller",
     )
-    main = "$group.exampleplugin.ExamplePlugin"
+    main = "$group.test.Main"
     version = getVersion().toString()
     libraries = listOf(
         "net.axay:kspigot:1.18.2",
+        "de.dasphiller.extensions:extensions:$extensionsVersion"
     )
+    prefix = "ppL"
 }
